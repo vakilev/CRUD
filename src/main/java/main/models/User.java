@@ -3,17 +3,17 @@ package main.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users2")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+    @Column(name = "id")
     private Long id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "surname")
     private String surname;
 
     public User() {
