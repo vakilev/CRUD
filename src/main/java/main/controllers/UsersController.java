@@ -23,7 +23,7 @@ public class UsersController {
         return "list";
     }
 
-    @GetMapping(value = "/new")
+    @GetMapping("/new")
     public String newUser(Model model) {
         model.addAttribute("user", new User());
         return "new";
@@ -32,7 +32,7 @@ public class UsersController {
     @PostMapping
     public String create(@ModelAttribute("user") User user) {
         userService.saveUser(user);
-        return "list";
+        return "redirect:/show";
     }
 
 }

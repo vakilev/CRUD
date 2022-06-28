@@ -20,7 +20,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @PropertySource("classpath:db.properties")
-@ComponentScan(value = "main")
+@ComponentScan(value = "java")
 public class AppConfig {
 
     @Autowired
