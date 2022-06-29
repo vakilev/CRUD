@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+//@RequestMapping(value = "/show")
 public class UsersController {
 
     private final UserService userService;
@@ -17,16 +18,16 @@ public class UsersController {
         this.userService = userService;
     }
 
-    @GetMapping("/show")
+    @GetMapping
     public String showAllUsers(Model model) {
-        model.addAttribute("users", userService.getUsers());
-        return "list";
+        model.addAttribute("users", userService.getAllUsers());
+        return "/show";
     }
 
     @GetMapping("/new")
     public String newUser(Model model) {
         model.addAttribute("user", new User());
-        return "new";
+        return "/new";
     }
 
     @PostMapping

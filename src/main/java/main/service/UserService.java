@@ -5,7 +5,7 @@ import main.models.User;
 import java.util.List;
 
 public interface UserService {
-    List<User> getUsers();
+    List<User> getAllUsers();
 
     User getUser(long id);
 
