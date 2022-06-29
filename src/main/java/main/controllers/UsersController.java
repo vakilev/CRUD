@@ -18,7 +18,7 @@ public class UsersController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/show")
     public String showAllUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());
         return "/show";
@@ -30,7 +30,7 @@ public class UsersController {
         return "/new";
     }
 
-    @PostMapping
+    @PostMapping("/show")
     public String create(@ModelAttribute("user") User user) {
         userService.saveUser(user);
         return "redirect:/show";
