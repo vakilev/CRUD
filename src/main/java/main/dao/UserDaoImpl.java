@@ -20,18 +20,18 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User getUser(long id) {
+    public User getUserById(long id) {
         return em.find(User.class, id);
     }
 
     @Override
-    public void save(User user) {
+    public void saveUser(User user) {
         em.persist(user);
     }
 
     @Override
-    public void delete(long id) {
-        User user = getUser(id);
+    public void deleteUser(long id) {
+        User user = getUserById(id);
         if (user == null) {
             throw new NullPointerException("User not found");
         }
@@ -39,7 +39,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void update(User user) {
+    public void updateUser(User user) {
         em.merge(user);
     }
 }

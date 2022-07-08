@@ -23,24 +23,24 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User getUser(long id) {
-        return userDao.getUser(id);
+    public User getUserById(long id) {
+        return userDao.getUserById(id);
     }
 
     @Override
     public void saveUser(User user) {
-        userDao.save(user);
+        userDao.saveUser(user);
     }
 
     @Override
     public void updateUser(User user) {
-        userDao.update(user);
+        userDao.updateUser(user);
     }
 
     @Override
     public void deleteUser(long id) {
         try {
-            userDao.delete(id);
+            userDao.deleteUser(id);
         } catch (NullPointerException e) {
             e.printStackTrace();
         }

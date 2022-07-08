@@ -36,4 +36,21 @@ public class UsersController {
         return "redirect:/show";
     }
 
+    @GetMapping("{id}/updateUser")
+    public String updateUser(@PathVariable("id") Long id,  Model model) {
+        model.addAttribute("user", userService.getUserById(id));
+        return "/updateUser";
+    }
+
+    @PatchMapping("{id}/updateUser")
+    public String update(@ModelAttribute("user") User user) {
+        userService.updateUser(user);
+        return "redirect:/show";
+    }
+
+    @DeleteMapping("{id}/deleteUser")
+    public String deleteUser(@PathVariable("id") Long id) {
+        userService.deleteUser(id);
+        return "redirect:/show";
+    }
 }
